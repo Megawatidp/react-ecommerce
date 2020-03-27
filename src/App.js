@@ -10,14 +10,15 @@ import Details from './components/Details';
 import Cart from './components/Cart/Cart';
 import Default from './components/Default';
 import Modal from './components/Modal';
-import { BrowserRouter } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
   return (
     <React.Fragment>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={ProductList} />
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/products" component={ProductList} />
         <Route path="/details" component={Details} />
         <Route path="/cart" component={Cart} />
         <Route  component={Default} />

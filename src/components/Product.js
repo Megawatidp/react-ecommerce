@@ -13,9 +13,9 @@ export default class Product extends Component {
 
                 <ProductConsumer>
                     {(value)=> (
-                        <div className="img-container p-5" onClick={()=>value.handleDetail(id)}>
+                        <div className="img-container" onClick={()=>value.handleDetail(id)}>
                         <Link to="/details">
-                            <img src={img} alt="product" className="card-img-top"/>
+                            <img src={img[0].image} alt="product" className="card-img-top"/>
                         </Link>
                         <button className="cart-btn" 
                             disabled={inCart ? true:false} 
@@ -50,7 +50,7 @@ export default class Product extends Component {
 Product.propTypes = {
     product: PropTypes.shape({
         id:PropTypes.number,
-        img:PropTypes.string,
+        img:PropTypes.array,
         title: PropTypes.string,
         price:PropTypes.number,
         inCart:PropTypes.bool
@@ -62,6 +62,7 @@ const ProductWrapper = styled.div`
     border-color:transparent;
     transition: all 1s linear;
 }
+
 
 .card-footer {
     background: transparent;
